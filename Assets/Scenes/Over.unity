@@ -910,11 +910,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7157232012548355706, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: leftJetParticles
+      value: 
+      objectReference: {fileID: 8670980158988568703}
+    - target: {fileID: 7157232012548355706, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: mainJetParticles
+      value: 
+      objectReference: {fileID: 8670980158988568704}
+    - target: {fileID: 7157232012548355706, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: rightJetParticles
+      value: 
+      objectReference: {fileID: 8670980158988568702}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+--- !u!198 &8670980158988568702 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7051371988067554307, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+  m_PrefabInstance: {fileID: 8670980158988568701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8670980158988568703 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8898011355846664146, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+  m_PrefabInstance: {fileID: 8670980158988568701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8670980158988568704 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3441999292636877402, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+  m_PrefabInstance: {fileID: 8670980158988568701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

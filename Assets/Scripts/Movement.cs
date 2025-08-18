@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float thrustForce = 10f;
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] AudioClip thrustSound;
+    [SerializeField] ParticleSystem mainJetParticles;
+    [SerializeField] ParticleSystem leftJetParticles;
+    [SerializeField] ParticleSystem rightJetParticles;
 
     Rigidbody rb;
     AudioSource audioSource;
@@ -40,10 +43,15 @@ public class Movement : MonoBehaviour
             {
                 audioSource.PlayOneShot(thrustSound);
             }
+            if (!mainJetParticles.isPlaying)
+            {
+                mainJetParticles.Play();
+            }
         }
         else
         {
             audioSource.Stop();
+            mainJetParticles.Stop();
         }
     }
 
@@ -53,10 +61,25 @@ public class Movement : MonoBehaviour
         if (rotationInput < 0)
         {
             ApplyRotation(rotationSpeed);
-        } 
+            if (!rightJetParticles.isPlaying)
+            {
+                rightJetParticles.Stop();
+                rightJetParticles.Play();
+            }
+        }
         else if (rotationInput > 0)
         {
             ApplyRotation(-rotationSpeed);
+            if (!leftJetParticles.isPlaying)
+            {
+                rightJetParticles.Stop();
+                leftJetParticles.Play();
+            }
+        }
+        else
+        {
+            rightJetParticles.Stop();
+            leftJetParticles.Stop();
         }
     }
 

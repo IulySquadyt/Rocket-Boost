@@ -735,21 +735,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &920593907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920593901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399ee130dffb024458cb66b0b072f8f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelLoadDelay: 2
-  crashSound: {fileID: 8300000, guid: 293999310f283d64e94cce3a9226f97a, type: 3}
-  finishSound: {fileID: 8300000, guid: 7b3da047b43fa594a9781f66bd896087, type: 3}
 --- !u!1 &2001949190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +992,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2029134215134129059, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: crashSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 293999310f283d64e94cce3a9226f97a, type: 3}
+    - target: {fileID: 2029134215134129059, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: finishSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b3da047b43fa594a9781f66bd896087, type: 3}
+    - target: {fileID: 2029134215134129059, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: crashParticles
+      value: 
+      objectReference: {fileID: 8670980158988568702}
+    - target: {fileID: 2029134215134129059, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+      propertyPath: successParticles
+      value: 
+      objectReference: {fileID: 8670980158988568703}
     - target: {fileID: 2912716794942095347, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.11
@@ -1074,10 +1075,17 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2991297686021539662, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 920593906}
-    - targetCorrespondingSourceObject: {fileID: 2991297686021539662, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 920593907}
   m_SourcePrefab: {fileID: 100100000, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+--- !u!198 &8670980158988568702 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7560376426564487281, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+  m_PrefabInstance: {fileID: 8670980158988568701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8670980158988568703 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4875650751324998476, guid: a275603ab33ad1c44a7e13171d18ce6e, type: 3}
+  m_PrefabInstance: {fileID: 8670980158988568701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
