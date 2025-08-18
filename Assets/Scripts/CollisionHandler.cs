@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
@@ -14,6 +15,7 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isControllable = true;
+    bool isCollidable = true;
 
     private void Start()
     {
@@ -23,22 +25,21 @@ public class CollisionHandler : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (!isControllable) return;
+        if (!isControllable || !isCollidable) 
+        {
+            return;
+        }
 
         switch (collision.gameObject.tag) 
         {
             case "Friendly":
-                Debug.Log("Friendly collision detected.");
                 break;
             case "Finish":
-                Debug.Log("Finish line reached!");
                 StartFinishSequence();
                 break;
             case "Fuel":
-                Debug.Log("Fuel collected!");
                 break;
             default:
-                Debug.Log("You crashed!");
                 StartCrashSequence();
                 break;
         }
@@ -82,4 +83,25 @@ public class CollisionHandler : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    //private void Update()
+    //{
+    //    RespondToDebugKeys();
+    //}
+
+    //void RespondToDebugKeys()
+    //{
+    //    if (Keyboard.current.lKey.wasPressedThisFrame)
+    //    {
+    //        LoadNextLevel();
+    //    }
+    //    else if (Keyboard.current.rKey.wasPressedThisFrame)
+    //    {
+    //        ReloadLevel();
+    //    }
+    //    else if (Keyboard.current.cKey.wasPressedThisFrame)
+    //    {
+    //        isCollidable = !isCollidable;
+    //    }
+    //}
 }
